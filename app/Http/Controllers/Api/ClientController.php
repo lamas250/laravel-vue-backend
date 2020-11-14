@@ -23,6 +23,16 @@ class ClientController extends Controller
         return response()->json($request);
     }
 
+    public function update(Request $request, $id)
+    {
+        $client = Client::findOrFail($id);
+        $client->name = $request->name;
+        $client->email = $request->email;
+        $client->phone = $request->phone;
+        $client->save();
+        return response()->json($request);
+    }
+
     public function delete($id)
     {
         $clients = Client::findOrFail($id);

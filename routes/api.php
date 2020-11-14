@@ -23,5 +23,6 @@ Route::get('/','Api\HomeController@index');
 
 // Clients
 Route::get('/clients','Api\ClientController@index');
-Route::post('/clients','Api\ClientController@store');
+Route::post('/clients/store','Api\ClientController@store');
+Route::put('/clients/{id}','Api\ClientController@update');
 Route::delete('/clients/{id}','Api\ClientController@delete');
