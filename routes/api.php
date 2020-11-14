@@ -26,3 +26,6 @@ Route::get('/clients','Api\ClientController@index');
 Route::post('/clients/store','Api\ClientController@store');
 Route::put('/clients/{id}','Api\ClientController@update');
 Route::delete('/clients/{id}','Api\ClientController@delete');
+
+// Products
+Route::resource('/products','Api\ProductsController')->except(['create','edit']);
