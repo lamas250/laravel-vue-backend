@@ -2,20 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
+use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $clients = [
-            [
-                'id' => 1,
-                'name' => 'Igor Lamas',
-                'email' => 'igor@teste.com'
-            ],
-        ];
+        $clients = Client::all();
 
         $products = [
             [
@@ -23,6 +18,11 @@ class HomeController extends Controller
                 'name' => 'Notebook',
                 'price' => '3000'
             ],
+            [
+                'id' => 2,
+                'name' => 'Celular',
+                'price' => '900'
+            ]
         ];
         
         return response()->json([
@@ -30,4 +30,6 @@ class HomeController extends Controller
             'products' => $products
             ]);
     }
+
+   
 }

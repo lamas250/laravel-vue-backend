@@ -19,3 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/','Api\HomeController@index');
+
+
+// Clients
+Route::get('/clients','Api\ClientController@index');
+Route::post('/clients','Api\ClientController@store');
+Route::delete('/clients/{id}','Api\ClientController@delete');
